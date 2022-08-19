@@ -1,0 +1,39 @@
+import serial
+from pynput.keyboard import Key, Controller
+import os
+from threading import *
+import serialFind as serialFind
+keyboard = Controller()
+
+Controller = serial.Serial(serialFind.serialEnd, 115200)
+comands = ["f1", "f2", "f3", "f4", "f5"]
+keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5]
+print("Hello Welcome to Nano Controller")
+THREADS = []
+class outputTecl(Thread):
+    def __init__(self, s):
+        try:
+            Thread.__init__(self)
+            self.data = s
+        except:
+            print("Error in Thread tvonoff1!")
+
+    def run(self):
+        count = 0
+        for i in comands:
+            if(self.data.startswith("!") and self.data[1:] == i ):
+                keyboard.release(keys[count])
+                print(self.data)
+            elif (self.data == i ):
+                print(self.data)
+                keyboard.press(keys[count])
+            count = count + 1
+
+
+while(True):
+    b = Controller.readline()
+    data = b.decode("utf-8")
+    dataSplit = data.split("\r")
+    data = dataSplit[0]
+    t = outputTecl(data)
+    t.start()
