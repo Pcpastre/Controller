@@ -12,104 +12,133 @@
 #define FORMAT_SPIFFS_IF_FAILED true
 
 const uint16_t port = 8090;
-const char * host = "10.0.0.101";
+const char *host = "10.0.0.101";
 
-int pinos[2][5] = {{27, 26, 25, 33, 32},
-                   {27, 26, 25, 33, 32}};
-                   
-int pressed[2][5] = {{0, 0, 0, 0, 0},
+int pinos[4][5] = {{13, 12, 14, 27, 26},
+                   {25, 33, 32, 22, 23},
+                   {5, 18, 19, 21, 03},
+                   {15, 2, 4, 16, 17}};
+
+int pressed[4][5] = {{0, 0, 0, 0, 0},
+                     {0, 0, 0, 0, 0},
+                     {0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
+String comandos[4][5][2] = {
+    {{"f1", "!f1"},
+     {"f2", "!f2"},
+     {"f3", "!f3"},
+     {"f4", "!f4"},
+     {"f5", "!f5"}},
 
-String comandos[2][5][2] = {
-  {{"f1","!f1"},
-  {"f2","!f2"},
-  {"f3","!f3"},
-  {"f4","!f4"},
-  {"f5","!f5"}},
-  
-  {{"d","!d"},
-  {"s","!s"},
-  {"a","!a"},
-  {"f","!f"},
-  {"g","!g"}}
-  
+    {{"f6", "!f6"},
+     {"f7", "!f7"},
+     {"f8", "!f8"},
+     {"f9", "!f9"},
+     {"f10", "!f10"}},
+
+    {
+        {"f11", "!f11"},
+        {"f12", "!f12"},
+        {"1", "!1"},
+        {"2", "!2"},
+        {"3", "!3"},
+    },
+
+    {
+        {"4", "!4"},
+        {"5", "!5"},
+        {"6", "!6"},
+        {"7", "!7"},
+        {"8", "!8"},
+    }
+
 };
 
 WiFiClient client;
-int arquivo = 0;                                                //Variavel responsavel pela manutenção dos efeitos
+int arquivo = 0; // Variavel responsavel pela manutenção dos efeitos
 
 String reg = " ";
 boolean waitB = true;
-//const char* ssid = "Speers-41801";
-//const char* password = "08816009";
+// const char* ssid = "Speers-41801";
+// const char* password = "08816009";
 WebServer server(80);
 
-
-void handleInfo(){
+void handleInfo()
+{
   String ssid = server.arg("ssid");
   String senha = server.arg("senha");
-  String value = ssid+';'+senha+"\n";
+  String value = ssid + ';' + senha + "\n";
   writeFile(SPIFFS, "/info.txt", (value.c_str()));
-  server.send(200, "text/plain", "ssid: " + ssid+ " senha: "+senha+ "\n" + "Restarting");
+  server.send(200, "text/plain", "ssid: " + ssid + " senha: " + senha + "\n" + "Restarting");
   ESP.restart();
-
 }
 
-void writeFile(fs::FS &fs, const char * path, const char * message){
-    Serial.printf("Writing file: %s\r\n", path);
+void writeFile(fs::FS &fs, const char *path, const char *message)
+{
+  Serial.printf("Writing file: %s\r\n", path);
 
-    File file = fs.open(path, FILE_WRITE);
-    if(!file){
-        Serial.println("- failed to open file for writing");
-        return;
-    }
-    if(file.print(message)){
-        Serial.println("- file written");
-    } else {
-        Serial.println("- write failed");
-    }
-    file.close();
+  File file = fs.open(path, FILE_WRITE);
+  if (!file)
+  {
+    Serial.println("- failed to open file for writing");
+    return;
+  }
+  if (file.print(message))
+  {
+    Serial.println("- file written");
+  }
+  else
+  {
+    Serial.println("- write failed");
+  }
+  file.close();
 }
 
-void deleteFile(fs::FS &fs, const char * path){
-    Serial.printf("Deleting file: %s\r\n", path);
-    if(fs.remove(path)){
-        Serial.println("- file deleted");
-    } else {
-        Serial.println("- delete failed");
-    }
+void deleteFile(fs::FS &fs, const char *path)
+{
+  Serial.printf("Deleting file: %s\r\n", path);
+  if (fs.remove(path))
+  {
+    Serial.println("- file deleted");
+  }
+  else
+  {
+    Serial.println("- delete failed");
+  }
 }
 
-void readFile(fs::FS &fs, const char * path){
-    Serial.printf("Reading file: %s\r\n", path);
+void readFile(fs::FS &fs, const char *path)
+{
+  Serial.printf("Reading file: %s\r\n", path);
 
-    File file = fs.open(path);
-    if(!file || file.isDirectory()){
-        Serial.println("- failed to open file for reading");
-        return;
-    }
-    
-    Serial.println("- read from file:");
-    while(file.available()){
-        reg = file.readStringUntil('\n');
-        //Serial.write(file.read());
-    }
-    file.close();
+  File file = fs.open(path);
+  if (!file || file.isDirectory())
+  {
+    Serial.println("- failed to open file for reading");
+    return;
+  }
+
+  Serial.println("- read from file:");
+  while (file.available())
+  {
+    reg = file.readStringUntil('\n');
+    // Serial.write(file.read());
+  }
+  file.close();
 }
 
-void sendPage(){
- 
+void sendPage()
+{
 
-  String page = htmlPage(0,0);
+  String page = htmlPage(0, 0);
   server.send(200, "text/html", page);
-  
-
 }
 
-String htmlPage(float t, float p){
-   String cd = "<!DOCTYPE html>\n";
-   cd += "<html lang=\"pt-br\">\n";
+String htmlPage(float t, float p)
+{
+  String cd = "<!DOCTYPE html>\n";
+  cd += "<html lang=\"pt-br\">\n";
   cd += "<head>\n";
   cd += "<meta charset=\"UTF-8\">\n";
   cd += "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n";
@@ -128,46 +157,49 @@ String htmlPage(float t, float p){
   cd += "SSID:\n";
   cd += "<input name=\"ssid\" type=\"text\" value=\"Seu SSID\" />\n";
   cd += "SENHA:\n";
-  cd += "<input name=\"senha\" type=\"text\" value=\"Sua Senha\" />\n";;
+  cd += "<input name=\"senha\" type=\"text\" value=\"Sua Senha\" />\n";
+  ;
   cd += "<input type=\"submit\" value=\"Enviar\" /></form>\n";
   cd += "</div>\n";
-  cd += "</body>\n";  
+  cd += "</body>\n";
   cd += "</html>\n";
-  return cd;             
-
-
+  return cd;
 }
 
-
-
-
-
-
-
-void setup(void) {
+void setup(void)
+{
   Serial.begin(115200);
-   for(int i = 0; i < 5; i++){
-    pinMode(pinos[0][i],INPUT_PULLUP);
-  }
-   if(!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED)){
-        Serial.println("SPIFFS Mount Failed");
-        return;
+  for (int j = 0; j < 4; j++)
+  {
+    for (int i = 0; i < 5; i++)
+    {
+      pinMode(pinos[j][i], INPUT_PULLUP);
     }
+  }
+  if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED))
+  {
+    Serial.println("SPIFFS Mount Failed");
+    return;
+  }
 
   readFile(SPIFFS, "/info.txt");
   String ssid = (reg.substring(0, reg.indexOf(';')));
-  String password = (reg.substring((reg.indexOf(';')+1), reg.length()));
-  Serial.print(ssid);Serial.print(' ');Serial.println(password);
+  String password = (reg.substring((reg.indexOf(';') + 1), reg.length()));
+  Serial.print(ssid);
+  Serial.print(' ');
+  Serial.println(password);
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid.c_str(), password.c_str());
   Serial.println("");
   int Cwait = 0;
   // Wait for connection
-  while(WiFi.status() != WL_CONNECTED && waitB ) {
+  while (WiFi.status() != WL_CONNECTED && waitB)
+  {
     delay(500);
     Serial.print(".");
     Cwait++;
-    if(Cwait >= 10){
+    if (Cwait >= 10)
+    {
       waitB = false;
       WiFi.mode(WIFI_AP);
       WiFi.softAP("conf", "12345678");
@@ -179,57 +211,68 @@ void setup(void) {
       Serial.println("Server started");
     }
   }
-  
-  if(waitB){
+
+  if (waitB)
+  {
     Serial.println("");
     Serial.print("Connected to ");
     Serial.println(ssid);
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
 
-    
-    if (MDNS.begin("esp32")) {
+    if (MDNS.begin("esp32"))
+    {
       Serial.println("MDNS responder started");
     }
-  
-  
+
     server.begin();
     Serial.println("HTTP server started");
-  }else{
-     server.on("/", sendPage);
-     server.on("/conexao", handleInfo);
+  }
+  else
+  {
+    server.on("/", sendPage);
+    server.on("/conexao", handleInfo);
   }
 }
- String serverPath = " ";
- String comand = " ";
- String serverName= "http://10.0.0.101:8080/send";
-void loop(void) {
- if(waitB){
-      HTTPClient http;
-      for(int i = 0; i < 5; i++){
-        if(digitalRead(pinos[0][i]) == 0 && pressed[0][i] == 0){
-             pressed[0][i] = 1;
-             comand = comandos[0][i][0];
-             Serial.println(comandos[0][i][0]);
-             serverPath = serverName + "?comand=" + comand;
-             http.begin(serverPath.c_str());
-             int httpResponseCode = http.GET();
-             Serial.println(httpResponseCode);
-            
-        }else if(digitalRead(pinos[0][i]) == 1 && pressed[0][i] == 1){
-            pressed[0][i] = 0;
-            comand = comandos[0][i][1];
-            Serial.println(comandos[0][i][1]);
-            serverPath = serverName + "?comand=" + comand;
-            http.begin(serverPath.c_str());
-            int httpResponseCode = http.GET();
-            Serial.println(httpResponseCode);
-        }   
+String serverPath = " ";
+String comand = " ";
+String serverName = "http://10.0.0.101:8080/send";
+void loop(void)
+{
+  if (waitB)
+  {
+    HTTPClient http;
+    for (int j = 0; j < 4; j++)
+    {
+      for (int i = 0; i < 5; i++)
+      {
+        if (digitalRead(pinos[j][i]) == 0 && pressed[j][i] == 0)
+        {
+          pressed[j][i] = 1;
+          comand = comandos[j][i][0];
+          Serial.println(comandos[j][i][0]);
+          serverPath = serverName + "?comand=" + comand;
+          http.begin(serverPath.c_str());
+          int httpResponseCode = http.GET();
+          Serial.println(httpResponseCode);
+        }
+        else if (digitalRead(pinos[j][i]) == 1 && pressed[j][i] == 1)
+        {
+          pressed[j][i] = 0;
+          comand = comandos[j][i][1];
+          Serial.println(comandos[j][i][1]);
+          serverPath = serverName + "?comand=" + comand;
+          http.begin(serverPath.c_str());
+          int httpResponseCode = http.GET();
+          Serial.println(httpResponseCode);
+        }
+        delay(1);
+      }
     }
+  }
 
-   }
-   
-   else{
+  else
+  {
     server.handleClient();
- }
+  }
 }
