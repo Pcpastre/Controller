@@ -1,11 +1,13 @@
 
-from pynput.keyboard import Controller
+from pynput.keyboard import Key, Controller
 import os
 from flask import Flask, request
 keyboard = Controller()
 
 print("Hello Welcome to Nano Controller")
 
+comands = ["f1", "f2", "f3", "f4", "f5"]
+keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5]
 
 app = Flask(__name__)
 
@@ -14,45 +16,15 @@ app = Flask(__name__)
 def index():
     data  = request.args.get('comand')
     print(data)
-    if data == "d":
-        print(data)
-        keyboard.press("d")
-
-    if data == "!d":
-        print(data)
-        keyboard.release("d")
-
-    if data == "a":
-        print(data)
-        keyboard.press("a")
-
-    if data == "!a":
-        print(data)
-        keyboard.release("a")
-
-    if data == "f":
-        print(data)
-        keyboard.press("f")
-
-    if data == "!f":
-        print(data)
-        keyboard.release("f")
-
-    if data == "s":
-        print(data)
-        keyboard.press("s")
-
-    if data == "!s":
-        print(data)
-        keyboard.release("s")
-
-    if data == "g":
-        print(data)
-        keyboard.press("g")
-
-    if data == "!g":
-        print(data)
-        keyboard.release("g")
+    count = 0
+    for i in comands:
+        if(data.startswith("!") and data[1:] == i ):
+            keyboard.release(keys[count])
+            print(data)
+        elif (data == i ):
+            print(data)
+            keyboard.press(keys[count])
+        count = count + 1
     return 'go'
 
 

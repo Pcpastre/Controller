@@ -14,15 +14,26 @@
 const uint16_t port = 8090;
 const char * host = "10.0.0.101";
 
-int pinos[] = {27, 26, 25, 33, 32};
-int pressed[] = {0, 0, 0, 0, 0};
+int pinos[2][5] = {{27, 26, 25, 33, 32},
+                   {27, 26, 25, 33, 32}};
+                   
+int pressed[2][5] = {{0, 0, 0, 0, 0},
+                     {0, 0, 0, 0, 0}};
 
-String comandos[5][2] = {
-  {"d","!d"},
+
+String comandos[2][5][2] = {
+  {{"f1","!f1"},
+  {"f2","!f2"},
+  {"f3","!f3"},
+  {"f4","!f4"},
+  {"f5","!f5"}},
+  
+  {{"d","!d"},
   {"s","!s"},
   {"a","!a"},
   {"f","!f"},
-  {"g","!g"}
+  {"g","!g"}}
+  
 };
 
 WiFiClient client;
@@ -136,7 +147,7 @@ String htmlPage(float t, float p){
 void setup(void) {
   Serial.begin(115200);
    for(int i = 0; i < 5; i++){
-    pinMode(pinos[i],INPUT_PULLUP);
+    pinMode(pinos[0][i],INPUT_PULLUP);
   }
    if(!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED)){
         Serial.println("SPIFFS Mount Failed");
@@ -196,30 +207,28 @@ void loop(void) {
  if(waitB){
       HTTPClient http;
       for(int i = 0; i < 5; i++){
-        if(digitalRead(pinos[i]) == 0 && pressed[i] == 0){
-             pressed[i] = 1;
-             comand = comandos[i][0];
-             Serial.println(comandos[i][0]);
+        if(digitalRead(pinos[0][i]) == 0 && pressed[0][i] == 0){
+             pressed[0][i] = 1;
+             comand = comandos[0][i][0];
+             Serial.println(comandos[0][i][0]);
              serverPath = serverName + "?comand=" + comand;
              http.begin(serverPath.c_str());
              int httpResponseCode = http.GET();
              Serial.println(httpResponseCode);
             
-        }else if(digitalRead(pinos[i]) == 1 && pressed[i] == 1){
-            pressed[i] = 0;
-            comand = comandos[i][1];
-            Serial.println(comandos[i][1]);
-             serverPath = serverName + "?comand=" + comand;
+        }else if(digitalRead(pinos[0][i]) == 1 && pressed[0][i] == 1){
+            pressed[0][i] = 0;
+            comand = comandos[0][i][1];
+            Serial.println(comandos[0][i][1]);
+            serverPath = serverName + "?comand=" + comand;
             http.begin(serverPath.c_str());
             int httpResponseCode = http.GET();
             Serial.println(httpResponseCode);
-        }
-        delay(5);
-          
-
+        }   
     }
+
+   }
    
-  }
    else{
     server.handleClient();
  }
