@@ -6,8 +6,8 @@ keyboard = Controller()
 
 print("Hello Welcome to Nano Controller")
 
-comands = ["f1", "f2", "f3", "f4", "f5"]
-keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5]
+comands = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9","f10", "f11", "f12", "1","2","3","4","5","6","7","8"]
+keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5,Key.f6,Key.f7,Key.f8,Key.f9,Key.f10,Key.f11,Key.f12,"1","2","3","4","5","6","7","8"]
 
 app = Flask(__name__)
 

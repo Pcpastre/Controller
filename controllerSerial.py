@@ -6,6 +6,7 @@ import serialFind as serialFind
 keyboard = Controller()
 
 Controller = serial.Serial(serialFind.serialEnd, 115200)
+
 comands = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9","f10", "f11", "f12", "1","2","3","4","5","6","7","8"]
 keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5,Key.f6,Key.f7,Key.f8,Key.f9,Key.f10,Key.f11,Key.f12,"1","2","3","4","5","6","7","8"]
 print("Hello Welcome to Nano Controller")
@@ -16,7 +17,7 @@ class outputTecl(Thread):
             Thread.__init__(self)
             self.data = s
         except:
-            print("Error in Thread tvonoff1!")
+            print("Error in Thread outputTecl")
 
     def run(self):
         count = 0
