@@ -7,8 +7,8 @@ keyboard = Controller()
 
 Controller = serial.Serial(serialFind.serialEnd, 115200)
 
-comands = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9","f10", "f11", "f12", "1","2","3","4","5","6","7","8"]
-keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5,Key.f6,Key.f7,Key.f8,Key.f9,Key.f10,Key.f11,Key.f12,"1","2","3","4","5","6","7","8"]
+comands = ["f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9","f10", "f11", "f12", "1","2","3","4","5","6","7","8","9","0","-","=","q","w","e","r","t","ip","u","i","o","p","'","[","a","s","d","f","g"]
+keys = [Key.f1,Key.f2,Key.f3,Key.f4,Key.f5,Key.f6,Key.f7,Key.f8,Key.f9,Key.f10,Key.f11,Key.f12,"1","2","3","4","5","6","7","8","9","0","-","=","q","w","e","r","t","y","u","i","o","p","'","[","a","s","d","f","g"]
 print("Hello Welcome to Nano Controller")
 THREADS = []
 class outputTecl(Thread):

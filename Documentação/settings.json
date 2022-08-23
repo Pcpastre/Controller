@@ -1,0 +1,848 @@
+{
+  "CloseToTray": false,
+  "ShowAll": false,
+  "HidGuardianEnabled": true,
+  "DisableAutoRefresh": false,
+  "Language": "English",
+  "Input": {
+    "Keyboard": {
+      "ForceFeedback": false
+    },
+    "Mouse": {
+      "ForceFeedback": false
+    },
+    "b4b51bb0-1f0c-11ed-800f-444553540000": {
+      "ForceFeedback": false
+    },
+    "794a2630-1f0a-11ed-8008-444553540000": {
+      "ForceFeedback": false
+    },
+    "794a2630-1f0a-11ed-800b-444553540000": {
+      "ForceFeedback": false
+    }
+  },
+  "Mapping": [
+    {
+      "StartWhenConnected": true,
+      "Name": "Controller1",
+      "Id": "b1d8f389-fc24-44ee-8e56-12d10595f191",
+      "ForceFeedbackDevice": null,
+      "Mappings": {
+        "A": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "92",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "B": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "93",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "X": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "91",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Y": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "90",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "94",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "99",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Start": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Back": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Home": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LX": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "96",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "98",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "LY": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "97",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "95",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "RX": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RY": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "UP": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "95",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "DOWN": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "97",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LEFT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "98",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RIGHT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "96",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        }
+      }
+    },
+    {
+      "StartWhenConnected": false,
+      "Name": "Controller2",
+      "Id": "875b8a79-26e3-45e0-b852-92d04c4be311",
+      "ForceFeedbackDevice": null,
+      "Mappings": {
+        "A": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "35",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "B": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "36",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "X": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "101",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Y": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "100",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "37",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "99",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Start": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Back": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Home": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LX": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "39",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "41",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "LY": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "40",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "38",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "RX": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RY": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "UP": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "95",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "DOWN": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "97",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LEFT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "98",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RIGHT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "96",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        }
+      }
+    },
+    {
+      "StartWhenConnected": true,
+      "Name": "Controller3",
+      "Id": "61ab5763-e2b1-431a-890e-fdafab106b4e",
+      "ForceFeedbackDevice": null,
+      "Mappings": {
+        "A": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "143",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "B": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "141",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "X": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "34",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Y": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "43",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "60",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R1": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "68",
+              "MinValue": 0.0,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R3": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Start": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Back": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "Home": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LX": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "48",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "63",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "LY": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "61",
+              "MinValue": 0.5,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            },
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "66",
+              "MinValue": 0.5,
+              "MaxValue": 1.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.5
+        },
+        "RX": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RY": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.5,
+              "MaxValue": 0.5,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "L2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "R2": {
+          "Mappers": [
+            {
+              "InputDevice": null,
+              "InputType": "0",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "UP": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "95",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "DOWN": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "97",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "LEFT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "98",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        },
+        "RIGHT": {
+          "Mappers": [
+            {
+              "InputDevice": "Keyboard",
+              "InputType": "96",
+              "MinValue": 0.0,
+              "MaxValue": 0.0,
+              "Deadzone": 0.0
+            }
+          ],
+          "CenterPoint": 0.0
+        }
+      }
+    }
+  ]
+}
