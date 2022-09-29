@@ -1,4 +1,7 @@
-
+/*
+ * This code just get an digital input 
+ * and give to the pc using the http requests 
+ */
 
 #include <WiFi.h>
 #include <WiFiClient.h>
@@ -10,9 +13,6 @@
 #include "SPIFFS.h"
 
 #define FORMAT_SPIFFS_IF_FAILED true
-
-const uint16_t port = 8090;
-const char *host = "10.0.0.101";
 
 int pinos[4][5] = {{13, 12, 14, 27, 26},
                    {25, 33, 32, 22, 23},
@@ -57,6 +57,9 @@ String comandos[4][5][2] = {
 
 WiFiClient client;
 int arquivo = 0; // Variavel responsavel pela manutenção dos efeitos
+
+const uint16_t port = 8090;
+const char *host = "10.0.0.101";
 
 String reg = " ";
 boolean waitB = true;
@@ -131,11 +134,14 @@ void readFile(fs::FS &fs, const char *path)
 void sendPage()
 {
 
-  String page = htmlPage(0, 0);
+  String page = htmlPage();
   server.send(200, "text/html", page);
 }
 
-String htmlPage(float t, float p)
+
+/// @brief Pagina HTML responsavel por receber as informações do wifi
+/// @return String contendo a pagina em html
+String htmlPage()
 {
   String cd = "<!DOCTYPE html>\n";
   cd += "<html lang=\"pt-br\">\n";
@@ -169,20 +175,21 @@ String htmlPage(float t, float p)
 void setup(void)
 {
   Serial.begin(115200);
-  for (int j = 0; j < 4; j++)
+
+  for (int j = 0; j < 4; j++)                     //incializa os pinos
   {
     for (int i = 0; i < 5; i++)
     {
       pinMode(pinos[j][i], INPUT_PULLUP);
     }
   }
-  if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED))
+  if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED))      //verifica a memoria flash do esp32
   {
     Serial.println("SPIFFS Mount Failed");
     return;
   }
 
-  readFile(SPIFFS, "/info.txt");
+  readFile(SPIFFS, "/info.txt"); 
   String ssid = (reg.substring(0, reg.indexOf(';')));
   String password = (reg.substring((reg.indexOf(';') + 1), reg.length()));
   Serial.print(ssid);

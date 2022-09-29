@@ -1,4 +1,7 @@
-
+/*
+ * This code just get an digital input 
+ * and give to the pc using the serial port 
+ */
 int pinos[4][5] = {{13, 12, 14, 27, 26},
                    {25, 33, 32, 22, 23},
                    {5, 18, 19, 21, 03},
@@ -9,7 +12,12 @@ int pressed[4][5] = {{0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0},
                      {0, 0, 0, 0, 0}};
 
-/*String comandos[4][5][2] = {
+
+/*
+ * If you want to use diferente serial commands just change bellow
+ */
+
+String comandos[4][5][2] = {
     {{"f1", "!f1"},
      {"f2", "!f2"},
      {"f3", "!f3"},
@@ -38,68 +46,8 @@ int pressed[4][5] = {{0, 0, 0, 0, 0},
         {"8", "!8"},
     }
 
-};*/
-/*String comandos[4][5][2] = {
-    {{"9", "!9"},
-     {"0", "!0"},
-     {"-", "!-"},
-     {"=", "!="},
-     {"q", "!q"}},
-
-    {{"w", "!w"},
-     {"e", "!e"},
-     {"r", "!r"},
-     {"t", "!t"},
-     {"ip", "!ip"}},
-
-    {
-        {"u", "!u"},
-        {"i", "!i"},
-        {"o", "!o"},
-        {"p", "!p"},
-        {"[", "!["},
-    },
-
-    {
-        {"a", "!a"},
-        {"s", "!s"},
-        {"d", "!d"},
-        {"f", "!f"},
-        {"g", "!g"},
-    }
-
-};*/
-
-String comandos[4][5][2] = {
-    {{"h", "!h"},
-     {"j", "!j"},
-     {"k", "!k"},
-     {"l", "!l"},
-     {"ce", "!ce"}},
-
-    {{"ti", "!ti"},
-     {"]", "!]"},
-     {"bi", "!bi"},
-     {"z", "!z"},
-     {"x", "!x"}},
-
-    {
-        {"c", "!c"},
-        {"v", "!v"},
-        {"b", "!b"},
-        {"n", "!n"},
-        {"m", "!m"},
-    },
-
-    {
-        {",", "!,"},
-        {".", "!."},
-        {";", "!;"},
-        {"/", "!/"},
-        {"up", "!up"},
-    }
-
 };
+
 void setup()
 {
   Serial.begin(115200);
@@ -111,7 +59,7 @@ void setup()
     }
   }
 }
-String comand = " ";
+
 void loop()
 {
   for (int j = 0; j < 4; j++)
@@ -121,13 +69,11 @@ void loop()
       if (digitalRead(pinos[j][i]) == 0 && pressed[j][i] == 0)
       {
         pressed[j][i] = 1;
-        comand = comandos[j][i][0];
         Serial.println(comandos[j][i][0]);
       }
       else if (digitalRead(pinos[j][i]) == 1 && pressed[j][i] == 1)
       {
         pressed[j][i] = 0;
-        comand = comandos[j][i][1];
         Serial.println(comandos[j][i][1]);
       }
       delay(1);
